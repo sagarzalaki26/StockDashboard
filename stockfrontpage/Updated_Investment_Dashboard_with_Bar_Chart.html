@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Capacity & Risk Assessment Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f8; padding: 20px; }
+        .container { max-width: 1000px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; }
+        .input-section, .result-section { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+        .input-section div, .result-section div { flex: 1; }
+        label { display: block; margin-bottom: 6px; font-weight: bold; }
+        input, select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { width: 100%; padding: 12px; background-color: #606361; color: white; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
+        button:hover { background-color: #5d605e; }
+        .result-box { background-color: #ecf0f1; padding: 15px; border-radius: 6px; }
+        canvas { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Investment Capacity & Risk Assessment Dashboard</h1>
+        <div class="input-section">
+            <div>
+                <h3>Investment Capacity Inputs</h3>
+                <label>Monthly Income (₹):</label><input type="number" id="income" placeholder="Enter Monthly Income">
+                <label>Monthly Savings (₹):</label><input type="number" id="savings" placeholder="Enter Monthly Savings">
+                <label>Monthly Expenses (₹):</label><input type="number" id="expenses" placeholder="Enter Monthly Expenses">
+                <label>Monthly Loan EMI (₹):</label><input type="number" id="emi" placeholder="Enter Monthly EMI">
+                <label>Emergency Fund (₹):</label><input type="number" id="emergencyFund" placeholder="Enter Emergency Fund">
+            </div>
+            <div>
+                <h3>Risk Assessment Inputs</h3>
+                <label>Investment Time Horizon:</label>
+                <select id="timeHorizon">
+                    <option value="3">Short-term (&lt;3 years)</option>
+                    <option value="2">Medium-term (3–7 years)</option>
+                    <option value="1">Long-term (&gt;7 years)</option>
+                </select>
+                <label>Reaction to 15% Investment Drop:</label>
+                <select id="dropReaction">
+                    <option value="1">Sell</option>
+                    <option value="2">Hold & Wait</option>
+                    <option value="3">Invest More</option>
+                </select>
+                <label>Income Stability:</label>
+                <select id="incomeStability">
+                    <option value="1">Unstable</option>
+                    <option value="2">Stable</option>
+                    <option value="3">Very Stable</option>
+                </select>
+            </div>
+        </div>
+        <button onclick="calculate()">Calculate</button>
+        <div class="result-section">
+            <div class="result-box">
+                <h3>Risk Category: <span id="riskCategory">-</span></h3>
+                <h4>Investment Mix Suggestion:</h4>
+                <ul id="investmentMix"></ul>
+            </div>
+            <div class="result-box">
+                <canvas id="investmentChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const timeHorizon = parseInt(document.getElementById("timeHorizon").value);
+            const dropReaction = parseInt(document.getElementById("dropReaction").value);
+            const incomeStability = parseInt(document.getElementById("incomeStability").value);
+            const totalRiskScore = timeHorizon + dropReaction + incomeStability;
+
+            let riskCategory, investmentMix;
+            if (totalRiskScore <= 4) {
+                riskCategory = "Low";
+                investmentMix = { "Fixed Deposits": 40, "Government Bonds": 30, "Debt Funds": 20, "Equity Funds": 10 };
+            } else if (totalRiskScore <= 6) {
+                riskCategory = "Medium";
+                investmentMix = { "Equity Funds": 40, "Debt Funds": 30, "Balanced Funds": 20, "Gold": 10 };
+            } else {
+                riskCategory = "High";
+                investmentMix = { "Stocks": 50, "Equity Funds": 30, "Alternatives": 10, "Debt Funds": 10 };
+            }
+
+            document.getElementById("riskCategory").innerText = riskCategory;
+
+            const mixList = document.getElementById("investmentMix");
+            mixList.innerHTML = "";
+            for (const [key, value] of Object.entries(investmentMix)) {
+                const li = document.createElement("li");
+                li.innerText = `${key}: ${value}%`;
+                mixList.appendChild(li);
+            }
+
+            const ctx = document.getElementById("investmentChart").getContext("2d");
+            if (window.investmentChart) window.investmentChart.destroy();
+            window.investmentChart = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: Object.keys(investmentMix),
+                    datasets: [{
+                        label: "Investment Allocation (%)",
+                        data: Object.values(investmentMix),
+                        backgroundColor: ["#3498db", "#2ecc71", "#f1c40f", "#e74c3c"],
+                        borderColor: ["#2980b9", "#27ae60", "#f39c12", "#c0392b"],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: { y: { beginAtZero: true, max: 100 } }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

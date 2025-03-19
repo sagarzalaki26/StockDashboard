@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Capacity Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        h2 { text-align: center; }
+        label { display: block; margin-top: 10px; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; }
+        button { width: 100%; padding: 10px; margin-top: 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        #result { margin-top: 20px; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+    <h2>Financial Capacity Calculator</h2>
+    <form id="capacityForm">
+        <label for="income">Monthly Income (₹):</label>
+        <input type="number" id="income" required>
+
+        <label for="expenses">Monthly Expenses (₹):</label>
+        <input type="number" id="expenses" required>
+
+        <label for="debt">Monthly Debt Obligations (₹):</label>
+        <input type="number" id="debt" required>
+
+        <label for="emergency">Emergency Fund Available (₹):</label>
+        <input type="number" id="emergency" required>
+
+        <label for="risk">Risk Tolerance:</label>
+        <select id="risk" required>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <button type="button" onclick="calculateCapacity()">Calculate Capacity</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateCapacity() {
+            const income = parseFloat(document.getElementById('income').value);
+            const expenses = parseFloat(document.getElementById('expenses').value);
+            const debt = parseFloat(document.getElementById('debt').value);
+            const emergency = parseFloat(document.getElementById('emergency').value);
+            const risk = document.getElementById('risk').value;
+
+            const monthlySurplus = income - expenses - debt;
+
+            if (monthlySurplus <= 0) {
+                document.getElementById('result').innerText = "You currently have no surplus to invest. Focus on reducing expenses or debts.";
+                return;
+            }
+
+            let riskMultiplier = 0.2; // Default for low risk
+            if (risk === "medium") riskMultiplier = 0.4;
+            if (risk === "high") riskMultiplier = 0.6;
+
+            const recommendedEmergencyFund = expenses * 6; // 6 months emergency fund
+            const emergencyShortfall = recommendedEmergencyFund - emergency;
+
+            let investableAmount = monthlySurplus;
+
+            if (emergencyShortfall > 0) {
+                investableAmount -= Math.min(investableAmount, emergencyShortfall / 6); // Encourage building emergency fund over 6 months
+            }
+
+            const finalInvestmentCapacity = investableAmount * riskMultiplier;
+
+            document.getElementById('result').innerText = 
+                finalInvestmentCapacity > 0 ? 
+                `Your recommended monthly investment capacity is ₹${finalInvestmentCapacity.toFixed(2)}.` :
+                "Focus on building your emergency fund and reducing debt before investing.";
+        }
+    </script>
+</body>
+</html>

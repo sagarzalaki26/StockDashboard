@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Capacity & Risk Assessment Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f7f7f7; }
+        h1, h2 { text-align: center; color:  #333; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; }
+        .column { flex: 1; min-width: 300px; max-width: 500px; padding: 20px; background-color: #fff; margin: 10px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        label { font-weight: bold; margin-top: 10px; display: block; }
+        input, select { width: 100%; padding: 8px; margin: 5px 0 15px; border-radius: 4px; border: 1px solid #ccc; }
+        button { background-color: #333; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px; }
+        button:hover { background-color: #333; }
+        .result { margin-top: 20px; padding: 15px; background-color: #e9ecef; border-radius: 8px; }
+        canvas { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>Investment Capacity & Risk Assessment Dashboard</h1>
+    <div class="container">
+        <div class="column">
+            <h2>Inputs</h2>
+            <label for="monthlyIncome">Monthly Income (₹):</label>
+            <input type="number" id="monthlyIncome" placeholder="Enter your monthly income">
+            
+            <label for="monthlySavings">Monthly Savings (₹):</label>
+            <input type="number" id="monthlySavings" placeholder="Enter your monthly savings">
+
+            <label for="monthlyExpenses">Monthly Expenses (₹):</label>
+            <input type="number" id="monthlyExpenses" placeholder="Enter your monthly expenses">
+
+            <label for="monthlyEMI">Monthly EMI (₹):</label>
+            <input type="number" id="monthlyEMI" placeholder="Enter your monthly EMI">
+
+            <label for="emergencyFund">Emergency Fund (₹):</label>
+            <input type="number" id="emergencyFund" placeholder="Enter emergency fund amount">
+
+            <label for="timeHorizon">Investment Time Horizon:</label>
+            <select id="timeHorizon">
+                <option value="3">Short-term (&lt;3 years)</option>
+                <option value="2">Medium-term (3-7 years)</option>
+                <option value="1">Long-term (&gt;7 years)</option>
+            </select>
+
+            <label for="dropReaction">Reaction to 15% Drop:</label>
+            <select id="dropReaction">
+                <option value="3">Invest More</option>
+                <option value="2">Hold & Wait</option>
+                <option value="1">Sell</option>
+            </select>
+
+            <label for="incomeStability">Income Stability:</label>
+            <select id="incomeStability">
+                <option value="3">Very Stable</option>
+                <option value="2">Stable</option>
+                <option value="1">Unstable</option>
+            </select>
+
+            <button onclick="calculate()">Calculate</button>
+        </div>
+        <div class="column">
+            <h2>Results</h2>
+            <div class="result" id="results">
+                <p>Enter inputs and click calculate to view results.</p>
+            </div>
+            <canvas id="investmentChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        function calculate() {
+            const income = parseFloat(document.getElementById('monthlyIncome').value) || 0;
+            const savings = parseFloat(document.getElementById('monthlySavings').value) || 0;
+            const expenses = parseFloat(document.getElementById('monthlyExpenses').value) || 0;
+            const emi = parseFloat(document.getElementById('monthlyEMI').value) || 0;
+            const emergencyFund = parseFloat(document.getElementById('emergencyFund').value) || 0;
+
+            const timeHorizon = parseInt(document.getElementById('timeHorizon').value);
+            const dropReaction = parseInt(document.getElementById('dropReaction').value);
+            const incomeStability = parseInt(document.getElementById('incomeStability').value);
+
+            // Calculate risk score
+            const riskScore = timeHorizon + dropReaction + incomeStability;
+
+            let riskCategory = '';
+            let investmentMix = {};
+            if (riskScore <= 5) {
+                riskCategory = 'Low Risk';
+                investmentMix = { 'Debt Instruments': 60, 'Balanced Funds': 30, 'Equity': 10 };
+            } else if (riskScore <= 7) {
+                riskCategory = 'Medium Risk';
+                investmentMix = { 'Debt Instruments': 40, 'Balanced Funds': 30, 'Equity': 30 };
+            } else {
+                riskCategory = 'High Risk';
+                investmentMix = { 'Debt Instruments': 20, 'Balanced Funds': 20, 'Equity': 60 };
+            }
+
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <h3>Risk Category: ${riskCategory}</h3>
+                <p><strong>Investment Mix Suggestion:</strong></p>
+                <ul>
+                    <li>Debt Instruments: ${investmentMix['Debt Instruments']}%</li>
+                    <li>Balanced Funds: ${investmentMix['Balanced Funds']}%</li>
+                    <li>Equity: ${investmentMix['Equity']}%</li>
+                </ul>
+            `;
+
+            const ctx = document.getElementById('investmentChart').getContext('2d');
+            if (window.investmentChartInstance) window.investmentChartInstance.destroy();
+            window.investmentChartInstance = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: Object.keys(investmentMix),
+                    datasets: [{
+                        data: Object.values(investmentMix),
+                        backgroundColor: ['#4e73df', '#1cc88a', '#f6c23e'],
+                    }]
+                },
+                options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+            });
+        }
+    </script>
+</body>
+</html>
