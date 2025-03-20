@@ -22,197 +22,245 @@
 </head>
 
 <body class="bg-gray-50">
-    <nav class="bg-white border-b border-gray-200">
-        <div class="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png"
-                            alt="twelvedata" />
-                    </div>
-                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="#"
-                            class="border-custom text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Products</a>
-                        <a href="#"
-                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Developers</a>
-                        <a href="#"
-                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Company</a>
-                        <a href="#"
-                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Pricing</a>
-                    </div>
-                </div>
+    <nav class="w-full border-b border-gray-200 bg-white ">
+        <div class="container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
                 <div class="flex items-center">
-                    <button type="button" class="p-2 text-gray-400 hover:text-gray-500">
+                    <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="twelvedata" />
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="sm:hidden">
+                    <button id="menu-toggle" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+    
+                <!-- Navigation Links -->
+                <div class="hidden sm:flex sm:space-x-8">
+                    <a href="#" class="text-gray-900 inline-flex items-center px-3 py-2 text-sm font-medium">Products</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-3 py-2 text-sm font-medium">Developers</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-3 py-2 text-sm font-medium">Company</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-3 py-2 text-sm font-medium">Pricing</a>
+                </div>
+    
+                <!-- Buttons -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <button class="p-2 text-gray-400 hover:text-gray-500">
                         <i class="fas fa-search text-lg"></i>
                     </button>
-                    <button
-                        class="ml-4 !rounded-button bg-custom text-white px-4 py-2 text-sm font-medium">Dashboard</button>
+                    <a href="stockdashbaord/index.html" class="bg-custom text-white px-4 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                    <a href="stockfrontpage/index.html" class="bg-custom text-white px-4 py-2 rounded-md text-sm font-medium">Frontpage</a>
                 </div>
             </div>
         </div>
+    
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div id="mobile-menu" class="hidden sm:hidden flex flex-col space-y-2 p-4 bg-white border-t border-gray-200">
+            <a href="#" class="text-gray-900 block px-3 py-2 text-sm font-medium">Products</a>
+            <a href="#" class="text-gray-500 hover:text-gray-700 block px-3 py-2 text-sm font-medium">Developers</a>
+            <a href="#" class="text-gray-500 hover:text-gray-700 block px-3 py-2 text-sm font-medium">Company</a>
+            <a href="#" class="text-gray-500 hover:text-gray-700 block px-3 py-2 text-sm font-medium">Pricing</a>
+            <a href="stockdashbaord/index.html" class="bg-custom text-white px-4 py-2 rounded-md text-center text-sm font-medium">Dashboard</a>
+            <a href="stockfrontpage/index.html" class="bg-custom text-white px-4 py-2 rounded-md text-center text-sm font-medium">Frontpage</a>
+        </div>
     </nav>
-    <main class="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="bg-white rounded-lg shadow flex">
-            <div class="w-64 bg-white p-6 rounded-lg shadow-md h-full p-4">
-                <div class="space-y-4">
-                    <div class="mb-6">
-                        <div class="flex items-center space-x-4 mb-4"><img
-                                src="https://creatie.ai/ai/api/search-image?query=Simple minimalist Apple logo on white background&width=40&height=40&flag=eb210cb4-2ad1-4ec9-a9b2-53908058e78e&flag=c6c29c76-dc4b-410e-84fe-2c990524a6a8&flag=600734c4-50c1-45d7-9aae-cdaa36d89ab5&flag=f4e67c47-c660-4af8-83a1-112b53711987"
-                                alt="Apple Inc." class="w-8 h-8" />
-                            <div>
-                                <h1 class="text-lg font-bold text-gray-900">Apple Inc.</h1>
-                                <div class="flex items-center space-x-2 text-xs text-gray-500"><span
-                                        class="font-medium">AAPL</span><span>NASDAQ</span></div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <h2 class="text-2xl font-bold text-gray-900">239.070007<span
-                                    class="ml-1 text-xs text-gray-500">USD</span></h2>
-                            <div class="text-base font-medium text-green-500">+3.74 (+1.59%)</div>
-                        </div>
-                        <div class="flex items-center space-x-2 text-xs text-gray-500 mb-4"><i
-                                class="fas fa-clock"></i><span>Last update Mar 7, 3:59 PM EST</span></div>
-                        <div class="px-2 py-1 bg-gray-100 rounded text-gray-700 text-xs"><i
-                                class="fas fa-moon mr-1"></i>Market closed</div>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+   
+   <main class="w-full border-b border-gray-200 container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="bg-white rounded-lg shadow flex flex-col lg:flex-row">
+        <!-- Sidebar - Stock Information -->
+        <div class="space-y-4 bg-white p-4 sm:p-6 rounded-lg shadow-md lg:w-80 xl:w-96">
+            <!-- Company Info -->
+            <div class="mb-6">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                        <span class="text-gray-700 font-bold">A</span>
                     </div>
-                    <div class="mb-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">Market Overview</h3>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center"><span class="text-sm text-gray-700">S&amp;P
-                                    500</span><span class="text-sm text-green-500">+0.57%</span></div>
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">NASDAQ</span><span
-                                    class="text-sm text-green-500">+0.89%</span></div>
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">DOW</span><span
-                                    class="text-sm text-red-500">-0.12%</span></div>
+                    <div>
+                        <h1 class="text-lg font-bold text-gray-900">Apple Inc.</h1>
+                        <div class="flex items-center space-x-2 text-xs text-gray-500">
+                            <span class="font-medium">AAPL</span>
+                            <span>NASDAQ</span>
                         </div>
                     </div>
-                    <div class="mb-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">Watchlist</h3>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">MSFT</span><span
-                                    class="text-sm text-green-500">+1.23%</span></div>
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">GOOGL</span><span
-                                    class="text-sm text-green-500">+0.95%</span></div>
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">TSLA</span><span
-                                    class="text-sm text-red-500">-2.15%</span></div>
-                        </div>
+                </div>
+                <div class="mb-4">
+                    <h2 class="text-2xl font-bold text-gray-900">
+                        239.07
+                        <span class="ml-1 text-xs text-gray-500">USD</span>
+                    </h2>
+                    <div class="text-base font-medium text-green-500">+3.74 (+1.59%)</div>
+                </div>
+                <div class="flex items-center space-x-2 text-xs text-gray-500 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Last update Mar 7, 3:59 PM EST</span>
+                </div>
+                <div class="px-2 py-1 bg-gray-100 rounded text-gray-700 text-xs inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    Market closed
+                </div>
+            </div>
+
+            <!-- Market Overview -->
+            <div class="mb-6">
+                <h3 class="text-sm font-medium text-gray-500 mb-2">Market Overview</h3>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">S&amp;P 500</span>
+                        <span class="text-sm text-green-500">+0.57%</span>
                     </div>
-                    <div class="mb-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">News</h3>
-                        <div class="space-y-3">
-                            <div class="text-sm">
-                                <p class="font-medium text-gray-900">Apple Announces New Product Launch</p>
-                                <p class="text-gray-500 text-xs">2 hours ago</p>
-                            </div>
-                            <div class="text-sm">
-                                <p class="font-medium text-gray-900">Market Rally Continues</p>
-                                <p class="text-gray-500 text-xs">4 hours ago</p>
-                            </div>
-                        </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">NASDAQ</span>
+                        <span class="text-sm text-green-500">+0.89%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">DOW</span>
+                        <span class="text-sm text-red-500">-0.12%</span>
                     </div>
                 </div>
             </div>
-            <div class="p-6 flex-1">
-                <div class="hidden">
-                    <img src="https://creatie.ai/ai/api/search-image?query=Simple minimalist Apple logo on white background&width=40&height=40&flag=eb210cb4-2ad1-4ec9-a9b2-53908058e78e&flag=c6c29c76-dc4b-410e-84fe-2c990524a6a8&flag=95e24366-051f-4875-8d25-1219a1e9494e&flag=83e0c8c8-87f5-4372-9046-9a7a0d599312"
-                        alt="Apple Inc." class="w-10 h-10" />
-                    <div>
 
-
+            <!-- Watchlist -->
+            <div class="mb-6">
+                <h3 class="text-sm font-medium text-gray-500 mb-2">Watchlist</h3>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">MSFT</span>
+                        <span class="text-sm text-green-500">+1.23%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">GOOGL</span>
+                        <span class="text-sm text-green-500">+0.95%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">TSLA</span>
+                        <span class="text-sm text-red-500">-2.15%</span>
                     </div>
                 </div>
+            </div>
 
-
-                <div class=" mb-6">
-                    <nav class="-mb-px flex space-x-6 bg-gray-300 rounded-full px-2  ">
-                        <a href="index.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm">Overview</a>
-                        <a href="statistics.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Statistics</a>
-                        <a href="Earnings.html"
-                            class=" text-custom whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Earnings</a>
-                        <a href="Analysis.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Analysis</a>
-                        <a href="Historical.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Historical
-                            data</a>
-                        <a href="Financial.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Financials</a>
-                        <a href="Option.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Options</a>
-                        <a href="Holders.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Holders</a>
-                    </nav>
+            <!-- News -->
+            <div class="mb-6">
+                <h3 class="text-sm font-medium text-gray-500 mb-2">News</h3>
+                <div class="space-y-3">
+                    <div class="text-sm">
+                        <p class="font-medium text-gray-900">Apple Announces New Product Launch</p>
+                        <p class="text-gray-500 text-xs">2 hours ago</p>
+                    </div>
+                    <div class="text-sm">
+                        <p class="font-medium text-gray-900">Market Rally Continues</p>
+                        <p class="text-gray-500 text-xs">4 hours ago</p>
+                    </div>
                 </div>
-                
-                  
-            
-                    <main class="max-w-8xl mx-auto px-4 ">
-                        <div class="w-full">
-                            
-                            <div class="">
-                                
-                                <div class="">
-                                    <div class="p-6">
-                                        <h2 class="text-3xl font-bold mb-6">Earnings</h2>
-                                        <table class="w-full">
-                                            <thead>
-                                                <tr class="text-left text-gray-600 border-b">
-                                                    <th class="pb-3">Date</th>
-                                                    <th class="pb-3">Estimate EPS</th>
-                                                    <th class="pb-3">Actual EPS</th>
-                                                    <th class="pb-3">Difference</th>
-                                                    <th class="pb-3">% Surprise</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="text-sm">
-                                                <tr class="border-b">
-                                                    <td class="py-4">Jan 29, 2026</td>
-                                                    <td class="py-4">—</td>
-                                                    <td class="py-4">—</td>
-                                                    <td class="py-4">—</td>
-                                                    <td class="py-4">—</td>
-                                                </tr>
-                                                <tr class="border-b">
-                                                    <td class="py-4">Oct 29, 2025</td>
-                                                    <td class="py-4">—</td>
-                                                    <td class="py-4">—</td>
-                                                    <td class="py-4">—</td>
-                                                    <td class="py-4">—</td>
-                                                </tr>
-                                                <tr class="border-b">
-                                                    <td class="py-4">Jan 31, 2025</td>
-                                                    <td class="py-4">2.35</td>
-                                                    <td class="py-4 text-green-500">2.40</td>
-                                                    <td class="py-4">0.05</td>
-                                                    <td class="py-4 text-green-500">2.13%</td>
-                                                </tr>
-                                                <tr class="border-b">
-                                                    <td class="py-4">Nov 01, 2024</td>
-                                                    <td class="py-4">1.60</td>
-                                                    <td class="py-4 text-green-500">1.64</td>
-                                                    <td class="py-4">0.04</td>
-                                                    <td class="py-4 text-green-500">2.50%</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="mt-6 bg-gray-50 p-4 rounded-lg flex items-center justify-between">
-                                            <span class="text-gray-600">Full earnings history available via API</span>
-                                            <button class="text-custom hover:text-custom-dark font-medium">
-                                                Access
-                                                <i class="fas fa-arrow-right ml-1"></i>
-                                            </button>
-                                        </div>
-                                    </div>
+            </div>
+        </div>
+
+        <!-- Main Content - Chart and Data -->
+        <div class="p-4 sm:p-6 flex-1">
+            <!-- Navigation Tabs -->
+            <div class="border-b border-gray-200 mb-6 overflow-x-auto scrollbar-hide">
+                <nav class="-mb-px flex space-x-4 sm:space-x-6 bg-gray-300 rounded-full px-2 whitespace-nowrap">
+                    <a href="index.html" class="text-blue-600 whitespace-nowrap py-2 px-1 border-b-2 border-blue-600 font-medium text-sm">
+                        Overview
+                    </a>
+                    <a href="statistics.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Statistics
+                    </a>
+                    <a href="Earnings.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Earnings
+                    </a>
+                    <a href="Analysis.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Analysis
+                    </a>
+                    <a href="Historical.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Historical data
+                    </a>
+                    <a href="Financial.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Financials
+                    </a>
+                    <a href="Option.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Options
+                    </a>
+                    <a href="Holders.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Holders
+                    </a>
+                </nav>
+            </div>
+
+            <main class="max-w-8xl mx-auto px-4 ">
+                <div class="w-full">
+                    
+                    <div class="">
+                        
+                        <div class="">
+                            <div class="p-6">
+                                <h2 class="text-3xl font-bold mb-6">Earnings</h2>
+                                <table class="w-full">
+                                    <thead>
+                                        <tr class="text-left text-gray-600 border-b">
+                                            <th class="pb-3">Date</th>
+                                            <th class="pb-3">Estimate EPS</th>
+                                            <th class="pb-3">Actual EPS</th>
+                                            <th class="pb-3">Difference</th>
+                                            <th class="pb-3">% Surprise</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-sm">
+                                        <tr class="border-b">
+                                            <td class="py-4">Jan 29, 2026</td>
+                                            <td class="py-4">—</td>
+                                            <td class="py-4">—</td>
+                                            <td class="py-4">—</td>
+                                            <td class="py-4">—</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="py-4">Oct 29, 2025</td>
+                                            <td class="py-4">—</td>
+                                            <td class="py-4">—</td>
+                                            <td class="py-4">—</td>
+                                            <td class="py-4">—</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="py-4">Jan 31, 2025</td>
+                                            <td class="py-4">2.35</td>
+                                            <td class="py-4 text-green-500">2.40</td>
+                                            <td class="py-4">0.05</td>
+                                            <td class="py-4 text-green-500">2.13%</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="py-4">Nov 01, 2024</td>
+                                            <td class="py-4">1.60</td>
+                                            <td class="py-4 text-green-500">1.64</td>
+                                            <td class="py-4">0.04</td>
+                                            <td class="py-4 text-green-500">2.50%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="mt-6 bg-gray-50 p-4 rounded-lg flex items-center justify-between">
+                                    <span class="text-gray-600">Full earnings history available via API</span>
+                                    <button class="text-custom hover:text-custom-dark font-medium">
+                                        Access
+                                        <i class="fas fa-arrow-right ml-1"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </main>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</main>
                
 </body>
 
