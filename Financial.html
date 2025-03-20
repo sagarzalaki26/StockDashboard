@@ -5,14 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stock Data Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet" />
-    <script
-        src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
-    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000"
-        data-border-radius="small"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+   <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
@@ -25,563 +22,626 @@
 </head>
 
 <body class="bg-gray-50">
-    <nav class="bg-white border-b border-gray-200">
-        <div class="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex">
-                    <div class="flex-shrink-0 flex items-center">
-                        <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png"
-                            alt="twelvedata" />
-                    </div>
-                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="#"
-                            class="border-custom text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Products</a>
-                        <a href="#"
-                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Developers</a>
-                        <a href="#"
-                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Company</a>
-                        <a href="#"
-                            class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Pricing</a>
-                    </div>
-                </div>
+    <nav class="w-full border-b border-gray-200 bg-white ">
+        <div class="container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
                 <div class="flex items-center">
-                    <button type="button" class="p-2 text-gray-400 hover:text-gray-500">
+                    <img class="h-8 w-auto" src="https://ai-public.creatie.ai/gen_page/logo_placeholder.png" alt="twelvedata" />
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="sm:hidden">
+                    <button id="menu-toggle" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+    
+                <!-- Navigation Links -->
+                <div class="hidden sm:flex sm:space-x-8">
+                    <a href="#" class="text-gray-900 inline-flex items-center px-3 py-2 text-sm font-medium">Products</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-3 py-2 text-sm font-medium">Developers</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-3 py-2 text-sm font-medium">Company</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-700 inline-flex items-center px-3 py-2 text-sm font-medium">Pricing</a>
+                </div>
+    
+                <!-- Buttons -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <button class="p-2 text-gray-400 hover:text-gray-500">
                         <i class="fas fa-search text-lg"></i>
                     </button>
-                    <button
-                        class="ml-4 !rounded-button bg-custom text-white px-4 py-2 text-sm font-medium">Dashboard</button>
+                    <a href="stockdashbaord/index.html" class="bg-custom text-white px-4 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                    <a href="stockfrontpage/index.html" class="bg-custom text-white px-4 py-2 rounded-md text-sm font-medium">Frontpage</a>
                 </div>
             </div>
         </div>
+    
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div id="mobile-menu" class="hidden sm:hidden flex flex-col space-y-2 p-4 bg-white border-t border-gray-200">
+            <a href="#" class="text-gray-900 block px-3 py-2 text-sm font-medium">Products</a>
+            <a href="#" class="text-gray-500 hover:text-gray-700 block px-3 py-2 text-sm font-medium">Developers</a>
+            <a href="#" class="text-gray-500 hover:text-gray-700 block px-3 py-2 text-sm font-medium">Company</a>
+            <a href="#" class="text-gray-500 hover:text-gray-700 block px-3 py-2 text-sm font-medium">Pricing</a>
+            <a href="stockdashbaord/index.html" class="bg-custom text-white px-4 py-2 rounded-md text-center text-sm font-medium">Dashboard</a>
+            <a href="stockfrontpage/index.html" class="bg-custom text-white px-4 py-2 rounded-md text-center text-sm font-medium">Frontpage</a>
+        </div>
     </nav>
-    <main class="container max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="bg-white rounded-lg shadow flex">
-            <div class="w-64 bg-white p-6 rounded-lg shadow-md h-full p-4">
-                <div class="space-y-4">
-                    <div class="mb-6">
-                        <div class="flex items-center space-x-4 mb-4"><img
-                                src="https://creatie.ai/ai/api/search-image?query=Simple minimalist Apple logo on white background&width=40&height=40&flag=eb210cb4-2ad1-4ec9-a9b2-53908058e78e&flag=c6c29c76-dc4b-410e-84fe-2c990524a6a8&flag=600734c4-50c1-45d7-9aae-cdaa36d89ab5&flag=f4e67c47-c660-4af8-83a1-112b53711987"
-                                alt="Apple Inc." class="w-8 h-8" />
-                            <div>
-                                <h1 class="text-lg font-bold text-gray-900">Apple Inc.</h1>
-                                <div class="flex items-center space-x-2 text-xs text-gray-500"><span
-                                        class="font-medium">AAPL</span><span>NASDAQ</span></div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <h2 class="text-2xl font-bold text-gray-900">239.070007<span
-                                    class="ml-1 text-xs text-gray-500">USD</span></h2>
-                            <div class="text-base font-medium text-green-500">+3.74 (+1.59%)</div>
-                        </div>
-                        <div class="flex items-center space-x-2 text-xs text-gray-500 mb-4"><i
-                                class="fas fa-clock"></i><span>Last update Mar 7, 3:59 PM EST</span></div>
-                        <div class="px-2 py-1 bg-gray-100 rounded text-gray-700 text-xs"><i
-                                class="fas fa-moon mr-1"></i>Market closed</div>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+   
+   <main class="w-full border-b border-gray-200 container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="bg-white rounded-lg shadow flex flex-col lg:flex-row">
+        <!-- Sidebar - Stock Information -->
+        <div class="space-y-4 bg-white p-4 sm:p-6 rounded-lg shadow-md lg:w-80 xl:w-96">
+            <!-- Company Info -->
+            <div class="mb-6">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                        <span class="text-gray-700 font-bold">A</span>
                     </div>
-                    <div class="mb-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">Market Overview</h3>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center"><span class="text-sm text-gray-700">S&amp;P
-                                    500</span><span class="text-sm text-green-500">+0.57%</span></div>
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">NASDAQ</span><span
-                                    class="text-sm text-green-500">+0.89%</span></div>
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">DOW</span><span
-                                    class="text-sm text-red-500">-0.12%</span></div>
+                    <div>
+                        <h1 class="text-lg font-bold text-gray-900">Apple Inc.</h1>
+                        <div class="flex items-center space-x-2 text-xs text-gray-500">
+                            <span class="font-medium">AAPL</span>
+                            <span>NASDAQ</span>
                         </div>
                     </div>
-                    <div class="mb-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">Watchlist</h3>
-                        <div class="space-y-2">
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">MSFT</span><span
-                                    class="text-sm text-green-500">+1.23%</span></div>
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">GOOGL</span><span
-                                    class="text-sm text-green-500">+0.95%</span></div>
-                            <div class="flex justify-between items-center"><span
-                                    class="text-sm text-gray-700">TSLA</span><span
-                                    class="text-sm text-red-500">-2.15%</span></div>
-                        </div>
+                </div>
+                <div class="mb-4">
+                    <h2 class="text-2xl font-bold text-gray-900">
+                        239.07
+                        <span class="ml-1 text-xs text-gray-500">USD</span>
+                    </h2>
+                    <div class="text-base font-medium text-green-500">+3.74 (+1.59%)</div>
+                </div>
+                <div class="flex items-center space-x-2 text-xs text-gray-500 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>Last update Mar 7, 3:59 PM EST</span>
+                </div>
+                <div class="px-2 py-1 bg-gray-100 rounded text-gray-700 text-xs inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    Market closed
+                </div>
+            </div>
+
+            <!-- Market Overview -->
+            <div class="mb-6">
+                <h3 class="text-sm font-medium text-gray-500 mb-2">Market Overview</h3>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">S&amp;P 500</span>
+                        <span class="text-sm text-green-500">+0.57%</span>
                     </div>
-                    <div class="mb-6">
-                        <h3 class="text-sm font-medium text-gray-500 mb-2">News</h3>
-                        <div class="space-y-3">
-                            <div class="text-sm">
-                                <p class="font-medium text-gray-900">Apple Announces New Product Launch</p>
-                                <p class="text-gray-500 text-xs">2 hours ago</p>
-                            </div>
-                            <div class="text-sm">
-                                <p class="font-medium text-gray-900">Market Rally Continues</p>
-                                <p class="text-gray-500 text-xs">4 hours ago</p>
-                            </div>
-                        </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">NASDAQ</span>
+                        <span class="text-sm text-green-500">+0.89%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">DOW</span>
+                        <span class="text-sm text-red-500">-0.12%</span>
                     </div>
                 </div>
             </div>
-            <div class="p-6 flex-1">
-                <div class="hidden">
-                    <img src="https://creatie.ai/ai/api/search-image?query=Simple minimalist Apple logo on white background&width=40&height=40&flag=eb210cb4-2ad1-4ec9-a9b2-53908058e78e&flag=c6c29c76-dc4b-410e-84fe-2c990524a6a8&flag=95e24366-051f-4875-8d25-1219a1e9494e&flag=83e0c8c8-87f5-4372-9046-9a7a0d599312"
-                        alt="Apple Inc." class="w-10 h-10" />
-                    <div>
 
-
+            <!-- Watchlist -->
+            <div class="mb-6">
+                <h3 class="text-sm font-medium text-gray-500 mb-2">Watchlist</h3>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">MSFT</span>
+                        <span class="text-sm text-green-500">+1.23%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">GOOGL</span>
+                        <span class="text-sm text-green-500">+0.95%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-700">TSLA</span>
+                        <span class="text-sm text-red-500">-2.15%</span>
                     </div>
                 </div>
+            </div>
 
-
-                <div class=" mb-6">
-                    <nav class="-mb-px flex space-x-6 bg-gray-300 rounded-full px-2  ">
-                        <a href="index.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm">Overview</a>
-                        <a href="statistics.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Statistics</a>
-                        <a href="Earnings.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Earnings</a>
-                        <a href="Analysis.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Analysis</a>
-                        <a href="Historical.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Historical
-                            data</a>
-                        <a href="Financial.html"
-                            class=" text-custom whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Financials</a>
-                        <a href="Option.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Options</a>
-                        <a href="Holders.html"
-                            class=" text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm hover:text-gray-700 hover:border-gray-300">Holders</a>
-                    </nav>
+            <!-- News -->
+            <div class="mb-6">
+                <h3 class="text-sm font-medium text-gray-500 mb-2">News</h3>
+                <div class="space-y-3">
+                    <div class="text-sm">
+                        <p class="font-medium text-gray-900">Apple Announces New Product Launch</p>
+                        <p class="text-gray-500 text-xs">2 hours ago</p>
+                    </div>
+                    <div class="text-sm">
+                        <p class="font-medium text-gray-900">Market Rally Continues</p>
+                        <p class="text-gray-500 text-xs">4 hours ago</p>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <div class="min-h-screen flex flex-col">
+        <!-- Main Content - Chart and Data -->
+        <div class="p-4 sm:p-6 flex-1">
+            <!-- Navigation Tabs -->
+            <div class="border-b border-gray-200 mb-6 overflow-x-auto scrollbar-hide">
+                <nav class="-mb-px flex space-x-4 sm:space-x-6 bg-gray-300 rounded-full px-2 whitespace-nowrap">
+                    <a href="index.html" class="text-blue-600 whitespace-nowrap py-2 px-1 border-b-2 border-blue-600 font-medium text-sm">
+                        Overview
+                    </a>
+                    <a href="statistics.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Statistics
+                    </a>
+                    <a href="Earnings.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Earnings
+                    </a>
+                    <a href="Analysis.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Analysis
+                    </a>
+                    <a href="Historical.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Historical data
+                    </a>
+                    <a href="Financial.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Financials
+                    </a>
+                    <a href="Option.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Options
+                    </a>
+                    <a href="Holders.html" class="text-gray-500 whitespace-nowrap py-2 px-1 border-b-2 border-transparent font-medium text-sm hover:text-gray-700 hover:border-gray-300">
+                        Holders
+                    </a>
+                </nav>
+            </div>
 
-                    <main class="flex-1 py-4">
-                        <nav class="border-b border-gray-200 bg-white">
-                            <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <h2 class="text-3xl font-bold mb-4">Financials</h2>
+            <div class="min-h-screen flex flex-col">
 
-                                <div class="flex h-16 justify-between">
-                                    <div class="flex">
-
-
-                                        <div class="flex flex-shrink-0 items-center">
-
-                                        </div>
-                                        <div class="hidden sm:flex sm:space-x-8"><a href="#"
-                                                class="inline-flex items-center border-b-2 border-primary px-1 pt-1 text-sm font-medium text-gray-900 border-primary">Income
-                                                Statement</a><a href="#"
-                                                class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Balance
-                                                Sheet</a><a href="#"
-                                                class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Cash
-                                                Flow</a></div>
-                                    </div>
-                                    <div class="hidden sm:flex sm:space-x-4 sm:items-center"><button type="button"
-                                            class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Annual</button><button
-                                            type="button"
-                                            class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-500 hover:text-gray-700">Quarterly</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </nav>
+                <main class="flex-1 py-4">
+                    <nav class="border-b border-gray-200 bg-white">
                         <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <div class="bg-white  overflow-hidden mb-8">
-                                <div class="overflow-x-auto">
-                                    <table class="min-w-full divide-y divide-gray-200">
-                                        <thead class="bg-gray-50">
-                                            <tr>
-                                                <th
-                                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Fiscal Date</th>
-                                                <th
-                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    2024</th>
-                                                <th
-                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    2023</th>
-                                                <th
-                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    2022</th>
-                                                <th
-                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    2021</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="bg-white divide-y divide-gray-200">
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Total Reported Revenue</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    391.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    383.3B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    394.3B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    365.8B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Cost of Revenue</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    210.4B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    214.1B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    223.5B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    213.0B</td>
-                                            </tr>
-                                            <tr class="bg-gray-50">
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Gross Profit</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    180.7B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    169.1B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    170.8B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    152.8B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Operating Expense</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    57.5B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    54.8B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    51.4B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    43.9B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Research &amp; Development</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    31.4B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    29.9B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    26.3B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    21.9B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Selling General and Admin</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    26.1B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    24.9B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    25.1B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    22.0B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Other Operating Expenses</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                            </tr>
-                                            <tr class="bg-gray-50">
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Operating Income</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    123.2B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    114.3B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    119.4B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    108.9B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Non Operating Interest Income</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    4.8B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    4.2B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    2.8B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    2.0B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Other Income Expense</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    -1.2B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    -0.8B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    -0.5B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    -0.3B</td>
-                                            </tr>
-                                            <tr class="bg-gray-50">
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Pretax Income</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    126.8B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    117.7B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    121.7B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    110.6B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Tax Provision</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    33.1B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    20.7B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    21.9B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    15.9B</td>
-                                            </tr>
-                                            <tr class="bg-gray-50">
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Net Income</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    93.7B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    97.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    99.8B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    94.7B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Basic EPS</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    6.12</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    6.15</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    6.05</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    5.61</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Diluted EPS</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    6.08</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    6.11</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    6.00</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    5.56</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Basic Average Shares</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    15.32B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    15.77B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    16.50B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    16.87B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Diluted Average Shares</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    15.41B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    15.88B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    16.64B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    17.02B</td>
-                                            </tr>
-                                            <tr class="bg-gray-50">
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    EBITDA</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    142.5B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    131.8B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    135.2B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
-                                                    123.1B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Net Income from Continuing Op.</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    93.7B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    97.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    99.8B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    94.7B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Minority Interests</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                            </tr>
-                                            <tr>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                    Preferred Stock Dividends</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                                <td
-                                                    class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
-                                                    0.0B</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <h2 class="text-3xl font-bold mb-4">Financials</h2>
+
+                            <div class="flex h-16 justify-between">
+                                <div class="flex">
+
+
+                                    <div class="flex flex-shrink-0 items-center">
+
+                                    </div>
+                                    <div class="hidden sm:flex sm:space-x-8"><a href="#"
+                                            class="inline-flex items-center border-b-2 border-primary px-1 pt-1 text-sm font-medium text-gray-900 border-primary">Income
+                                            Statement</a><a href="#"
+                                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Balance
+                                            Sheet</a><a href="#"
+                                            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Cash
+                                            Flow</a></div>
+                                </div>
+                                <div class="hidden sm:flex sm:space-x-4 sm:items-center"><button type="button"
+                                        class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Annual</button><button
+                                        type="button"
+                                        class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-500 hover:text-gray-700">Quarterly</button>
                                 </div>
                             </div>
-
                         </div>
-                    </main>
-                    <footer class="bg-white border-t border-gray-200 mt-8">
-                        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                            <div class="flex justify-between items-center text-sm text-gray-500">
-                                <div>Last updated: February 2024</div>
-                                <div>All amounts in USD (Billions)</div>
+                    </nav>
+                    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="bg-white  overflow-hidden mb-8">
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full divide-y divide-gray-200">
+                                    <thead class="bg-gray-50">
+                                        <tr>
+                                            <th
+                                                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                Fiscal Date</th>
+                                            <th
+                                                class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                2024</th>
+                                            <th
+                                                class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                2023</th>
+                                            <th
+                                                class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                2022</th>
+                                            <th
+                                                class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                2021</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y divide-gray-200">
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Total Reported Revenue</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                391.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                383.3B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                394.3B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                365.8B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Cost of Revenue</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                210.4B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                214.1B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                223.5B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                213.0B</td>
+                                        </tr>
+                                        <tr class="bg-gray-50">
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Gross Profit</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                180.7B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                169.1B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                170.8B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                152.8B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Operating Expense</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                57.5B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                54.8B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                51.4B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                43.9B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Research &amp; Development</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                31.4B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                29.9B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                26.3B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                21.9B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Selling General and Admin</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                26.1B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                24.9B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                25.1B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                22.0B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Other Operating Expenses</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                        </tr>
+                                        <tr class="bg-gray-50">
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Operating Income</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                123.2B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                114.3B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                119.4B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                108.9B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Non Operating Interest Income</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                4.8B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                4.2B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                2.8B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                2.0B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Other Income Expense</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                -1.2B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                -0.8B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                -0.5B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                -0.3B</td>
+                                        </tr>
+                                        <tr class="bg-gray-50">
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Pretax Income</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                126.8B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                117.7B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                121.7B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                110.6B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Tax Provision</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                33.1B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                20.7B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                21.9B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                15.9B</td>
+                                        </tr>
+                                        <tr class="bg-gray-50">
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Net Income</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                93.7B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                97.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                99.8B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                94.7B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Basic EPS</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                6.12</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                6.15</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                6.05</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                5.61</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Diluted EPS</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                6.08</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                6.11</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                6.00</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                5.56</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Basic Average Shares</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                15.32B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                15.77B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                16.50B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                16.87B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Diluted Average Shares</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                15.41B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                15.88B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                16.64B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                17.02B</td>
+                                        </tr>
+                                        <tr class="bg-gray-50">
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                EBITDA</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                142.5B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                131.8B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                135.2B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right font-semibold text-gray-900">
+                                                123.1B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Net Income from Continuing Op.</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                93.7B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                97.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                99.8B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                94.7B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Minority Interests</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                                Preferred Stock Dividends</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                            <td
+                                                class="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-900">
+                                                0.0B</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    </footer>
-                </div>
 
-
-
-
+                    </div>
+                </main>
+                <footer class="bg-white border-t border-gray-200 mt-8">
+                    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                        <div class="flex justify-between items-center text-sm text-gray-500">
+                            <div>Last updated: February 2024</div>
+                            <div>All amounts in USD (Billions)</div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</main>
+               
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
