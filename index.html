@@ -68,7 +68,7 @@
         });
     </script>
     
-    <!-- <main class="w-full border-b border-gray-200 container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main class="w-full border-b border-gray-200 container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-lg shadow flex">
             <div class="space-y-4 bg-white p-6 rounded-lg shadow-md">
                 <div class="mb-6">
@@ -222,95 +222,9 @@
                 </div>
             </div>
         </div>
-    </main> -->
-
-    <main class="container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div class="bg-white rounded-lg shadow-md p-6">
-            <!-- Stock Overview -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Left Panel -->
-                <div class="md:col-span-1">
-                    <div class="flex items-center space-x-4">
-                        <img src="https://creatie.ai/ai/api/search-image?query=Apple%20logo" alt="Apple Inc." class="w-10 h-10">
-                        <div>
-                            <h1 class="text-lg font-bold text-gray-900">Apple Inc.</h1>
-                            <p class="text-sm text-gray-500">AAPL • NASDAQ</p>
-                        </div>
-                    </div>
-                    <h2 class="text-2xl font-bold mt-4">239.07 <span class="text-sm text-gray-500">USD</span></h2>
-                    <p class="text-green-500 font-medium">+3.74 (+1.59%)</p>
-                    <p class="text-xs text-gray-500 mt-2"><i class="fas fa-clock"></i> Last update Mar 7, 3:59 PM EST</p>
-                    <p class="px-2 py-1 bg-gray-100 rounded text-gray-700 text-xs mt-2"><i class="fas fa-moon mr-1"></i> Market closed</p>
-                </div>
-
-                <!-- Watchlist -->
-                <div class="md:col-span-2">
-                    <h3 class="text-sm font-medium text-gray-500">Market Overview</h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-2">
-                        <div class="flex justify-between items-center text-sm">
-                            <span>S&P 500</span>
-                            <span class="text-green-500">+0.57%</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span>NASDAQ</span>
-                            <span class="text-green-500">+0.89%</span>
-                        </div>
-                        <div class="flex justify-between items-center text-sm">
-                            <span>DOW</span>
-                            <span class="text-red-500">-0.12%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Chart Section -->
-            <div class="mt-6">
-                <h3 class="text-sm font-medium text-gray-500 mb-2">Stock Chart</h3>
-                <div class="w-full h-64 bg-gray-200 flex items-center justify-center">
-                    <p class="text-gray-600">[Stock Chart Placeholder]</p>
-                </div>
-            </div>
-
-            <!-- Buttons & Filters -->
-            <div class="flex flex-wrap justify-between mt-6">
-                <div class="flex flex-wrap space-x-2">
-                    <button class="bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 rounded-md">5y</button>
-                    <button class="bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 rounded-md">1y</button>
-                    <button class="bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 rounded-md">6m</button>
-                    <button class="bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 rounded-md">3m</button>
-                    <button class="bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 rounded-md">1m</button>
-                </div>
-                <p class="text-sm text-gray-600">05:37:50 (UTC)</p>
-            </div>
-
-            <!-- Data Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                <div class="bg-gray-50 rounded-lg p-4">
-                    <h3 class="text-sm font-medium text-gray-500 mb-2">Day Range</h3>
-                    <div class="flex items-center space-x-4">
-                        <span class="text-sm text-gray-700">234.75</span>
-                        <div class="flex-1 h-2 bg-gray-200 rounded-full">
-                            <div class="h-2 bg-blue-500 rounded-full" style="width: 60%"></div>
-                        </div>
-                        <span class="text-sm text-gray-700">241.37</span>
-                    </div>
-                </div>
-                <div class="bg-gray-50 rounded-lg p-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <h3 class="text-sm font-medium text-gray-500 mb-1">Previous Close</h3>
-                            <p class="text-sm text-gray-900">235.33</p>
-                        </div>
-                        <div>
-                            <h3 class="text-sm font-medium text-gray-500 mb-1">Open</h3>
-                            <p class="text-sm text-gray-900">235.11</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </main>
+
+   
     <script>
         const chart = echarts.init(document.getElementById('stockChart'));
         const option = {
