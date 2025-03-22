@@ -1,0 +1,198 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f8f9fa;
+    padding-top: 70px;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.search-bar input {
+    padding: 8px;
+    width: 250px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile Navbar */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Learning Section */
+.learning-section {
+    padding: 25px 15px;
+    background-color: #141414;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+.tabs .active {
+    border-bottom: 2px solid white;
+}
+
+/* Course List */
+.course-container {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Course Card */
+.course-card {
+    background: white;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Course Image */
+.course-image {
+    position: relative;
+}
+
+.course-image img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+}
+
+.course-image:hover .play-button {
+    display: block;
+}
+
+/* Course Info */
+.course-info {
+    padding: 15px;
+}
+
+.course-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.course-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-bar input {
+        width: 100%;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .course-container {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+}
