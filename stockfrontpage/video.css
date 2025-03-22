@@ -196,3 +196,8 @@ h1 {
         align-items: center;
     }
 }
+@media (max-width: 360px){
+    .learning-section h1{
+        margin-top: 30;
+    }
+}
